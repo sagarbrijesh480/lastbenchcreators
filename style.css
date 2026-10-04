@@ -1,0 +1,159 @@
+/* Reset basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Base Layout */
+.navbar {
+    background-color: #9D2436;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.last {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-left: -250px;
+    padding-bottom: 0px;
+    font-weight: 700;
+    color: white;
+    display: block;
+    white-space: nowrap;
+
+    position: relative;
+    top: -10px;
+}
+
+.logo-sub {
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    margin-left: -250px;
+}
+
+.nav-logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* Navigation Links for Desktop */
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    color: #cccccc;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+}
+
+/* Hide toggle checkbox on desktop */
+.nav-toggle {
+    display: none;
+}
+
+/* Mobile Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .nav-item {
+        display: block;
+        padding: 20px;
+        border-bottom: 1px solid #333;
+    }
+
+    /* Hamburger Menu Button Icon */
+    .nav-toggle-label {
+        cursor: pointer;
+        display: block;
+        padding: 10px;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: #ffffff;
+        height: 2px;
+        width: 25px;
+        position: relative;
+        transition: all 0.2s ease-out;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+
+    .nav-toggle-label span::before {
+        top: 8px;
+    }
+
+    .nav-toggle-label span::after {
+        top: -8px;
+    }
+
+    /* Triggering Menu Dropdown & Icon Animation using pure CSS */
+    .nav-toggle:checked ~ .nav-menu {
+        max-height: 300px;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span {
+        background: transparent;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span::before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span::after {
+        transform: rotate(45deg);
+        top: 0;
+    }
+}
