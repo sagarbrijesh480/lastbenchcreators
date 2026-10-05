@@ -1,159 +1,872 @@
-/* Reset basic styling */
+/* =====================================================
+   RESET
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Navbar Base Layout */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
 .navbar {
+    width: 100%;
     background-color: #9D2436;
     position: sticky;
     top: 0;
-    width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 .nav-container {
-    max-width: 100%;
-    margin: 0 auto;
+    width: 100%;
+    min-height: 90px;
+
+    padding: 10px 4%;
+
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 25px;
+
+    gap: 30px;
 }
 
-.col {
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.brand {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 15px;
+
+    min-width: 0;
 }
 
-.last {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    margin-left: -250px;
-    padding-bottom: 0px;
-    font-weight: 700;
-    color: white;
-    display: block;
-    white-space: nowrap;
-
-    position: relative;
-    top: -10px;
-}
-
-.logo-sub {
-    font-size: 20px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: white;
-    margin-left: -250px;
-}
 
 .nav-logo {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
+    width: 65px;
+    height: 65px;
+
+    object-fit: cover;
+
     border-radius: 50%;
+
+    flex-shrink: 0;
 }
 
-/* Navigation Links for Desktop */
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+.last {
+    color: white;
+
+    font-family: Georgia, 'Times New Roman', serif;
+
+    font-size: clamp(24px, 2.5vw, 40px);
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+}
+
+
+.logo-sub {
+    color: white;
+
+    font-size: clamp(11px, 1.1vw, 16px);
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    font-weight: 500;
+
+    margin-top: 5px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   DESKTOP NAVIGATION
+===================================================== */
+
 .nav-menu {
     display: flex;
+    align-items: center;
+
     list-style: none;
+
+    gap: 5px;
 }
 
+
 .nav-item {
-    color: #cccccc;
+    display: block;
+
+    color: #eeeeee;
+
     text-decoration: none;
+
     padding: 10px 15px;
+
     font-size: 16px;
-    transition: color 0.3s ease;
+
+    transition: all 0.3s ease;
 }
+
 
 .nav-item:hover {
     color: #ffffff;
+
+    transform: translateY(-2px);
 }
 
-/* Hide toggle checkbox on desktop */
+
+/* =====================================================
+   MOBILE TOGGLE
+===================================================== */
+
 .nav-toggle {
     display: none;
 }
 
-/* Mobile Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #1a1a1a;
-        flex-direction: column;
-        text-align: center;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
+
+.nav-toggle-label {
+    display: none;
+}
+
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    min-height: calc(100vh - 90px);
+
+    display: flex;
+
+    align-items: center;
+
+    background-image: url("home-one-img1.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   HERO OVERLAY
+===================================================== */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(28, 34, 91, 0.72);
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   HERO CONTAINER
+===================================================== */
+
+.hero-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1700px;
+
+    margin: 0 auto;
+
+    padding: 80px 5.6%;
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: #FDEEF1;
+
+    color: #be3b4c;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    padding: 16px 23px;
+
+    border-radius: 35px;
+
+    margin-bottom: 30px;
+}
+
+
+.badge-icon {
+    font-size: 23px;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   HERO HEADING
+===================================================== */
+
+.hero h1 {
+    color: #ffffff;
+
+    font-size: clamp(45px, 5vw, 88px);
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 30px;
+
+    max-width: 950px;
+}
+
+
+/* =====================================================
+   HERO PARAGRAPH
+===================================================== */
+
+.hero p {
+    color: #ffffff;
+
+    font-size: clamp(16px, 1.3vw, 20px);
+
+    line-height: 1.8;
+
+    font-weight: 400;
+
+    max-width: 820px;
+
+    margin-bottom: 45px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 182px;
+
+    min-height: 57px;
+
+    padding: 0 30px;
+
+    border-radius: 30px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Shop Button */
+
+.btn-learn {
+    background: #C0394B;
+}
+
+
+.btn-learn:hover {
+    background: #d9801e;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* WhatsApp Button */
+
+.btn-quote {
+    background: #FDF8F3;
+
+    color: #d9801e;
+}
+
+
+.btn-quote i {
+    font-size: 25px;
+
+    color: rgb(54, 224, 54);
+
+    margin-right: 10px;
+}
+
+
+.btn-quote:hover {
+    background: #e9a900;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .nav-container {
+        padding: 10px 3%;
     }
+
 
     .nav-item {
-        display: block;
-        padding: 20px;
-        border-bottom: 1px solid #333;
+        padding: 10px 10px;
+
+        font-size: 15px;
     }
 
-    /* Hamburger Menu Button Icon */
-    .nav-toggle-label {
-        cursor: pointer;
-        display: block;
-        padding: 10px;
+
+    .hero-container {
+        padding: 70px 6%;
     }
+
+
+    .hero h1 {
+        font-size: clamp(45px, 6vw, 70px);
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .nav-container {
+        min-height: 80px;
+    }
+
+
+    .nav-logo {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    .last {
+        font-size: 27px;
+    }
+
+
+    .logo-sub {
+        font-size: 11px;
+
+        letter-spacing: 0.08em;
+    }
+
+
+    .nav-menu {
+        gap: 0;
+    }
+
+
+    .nav-item {
+        padding: 8px;
+
+        font-size: 14px;
+    }
+
+
+    .hero {
+        min-height: calc(100vh - 80px);
+    }
+
+
+    .hero-container {
+        padding: 65px 7%;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(42px, 7vw, 65px);
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero p {
+        font-size: 18px;
+
+        max-width: 700px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .nav-container {
+        min-height: 75px;
+
+        padding: 8px 20px;
+    }
+
+
+    .nav-logo {
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .last {
+        font-size: 23px;
+    }
+
+
+    .logo-sub {
+        font-size: 9px;
+
+        letter-spacing: 0.06em;
+    }
+
+
+    /* Hamburger */
+
+    .nav-toggle-label {
+        display: block;
+
+        width: 40px;
+        height: 40px;
+
+        cursor: pointer;
+
+        position: relative;
+
+        flex-shrink: 0;
+    }
+
 
     .nav-toggle-label span,
     .nav-toggle-label span::before,
     .nav-toggle-label span::after {
+
         display: block;
+
+        position: absolute;
+
+        width: 27px;
+        height: 3px;
+
         background: #ffffff;
-        height: 2px;
-        width: 25px;
-        position: relative;
-        transition: all 0.2s ease-out;
+
+        border-radius: 5px;
+
+        transition: all 0.3s ease;
     }
+
+
+    .nav-toggle-label span {
+        top: 18px;
+        left: 6px;
+    }
+
 
     .nav-toggle-label span::before,
     .nav-toggle-label span::after {
-        content: '';
-        position: absolute;
+        content: "";
+        left: 0;
     }
+
 
     .nav-toggle-label span::before {
-        top: 8px;
+        top: -9px;
     }
+
 
     .nav-toggle-label span::after {
-        top: -8px;
+        top: 9px;
     }
 
-    /* Triggering Menu Dropdown & Icon Animation using pure CSS */
-    .nav-toggle:checked ~ .nav-menu {
-        max-height: 300px;
+
+    /* Mobile Menu */
+
+    .nav-menu {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #9D2436;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        text-align: center;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition: max-height 0.35s ease;
     }
+
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+
+    .nav-item {
+        width: 100%;
+
+        padding: 16px 20px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+        font-size: 16px;
+    }
+
+
+    /* Open Menu */
+
+    .nav-toggle:checked ~ .nav-menu {
+        max-height: 400px;
+    }
+
+
+    /* Hamburger -> X */
 
     .nav-toggle:checked ~ .nav-toggle-label span {
         background: transparent;
     }
 
+
     .nav-toggle:checked ~ .nav-toggle-label span::before {
-        transform: rotate(-45deg);
+        transform: rotate(45deg);
+
         top: 0;
     }
 
+
     .nav-toggle:checked ~ .nav-toggle-label span::after {
-        transform: rotate(45deg);
+        transform: rotate(-45deg);
+
         top: 0;
     }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: calc(100vh - 75px);
+
+        background-position: 65% center;
+    }
+
+
+    .hero-overlay {
+        background: rgba(22, 28, 76, 0.78);
+    }
+
+
+    .hero-container {
+        padding: 55px 25px;
+    }
+
+
+    .badge {
+        font-size: 14px;
+
+        padding: 13px 18px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .badge-icon {
+        font-size: 18px;
+    }
+
+
+    .hero h1 {
+        font-size: 44px;
+
+        line-height: 1.15;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        max-width: 600px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .btn {
+        width: 190px;
+
+        min-width: 190px;
+
+        min-height: 54px;
+
+        font-size: 16px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .nav-container {
+        padding: 8px 15px;
+    }
+
+
+    .nav-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .brand {
+        gap: 10px;
+    }
+
+
+    .last {
+        font-size: 20px;
+    }
+
+
+    .logo-sub {
+        font-size: 8px;
+
+        letter-spacing: 0.04em;
+    }
+
+
+    .hero {
+        min-height: calc(100vh - 70px);
+
+        background-position: 68% center;
+    }
+
+
+    .hero-container {
+        padding: 45px 20px;
+    }
+
+
+    .badge {
+        font-size: 13px;
+
+        padding: 11px 16px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .hero h1 {
+        font-size: 37px;
+
+        line-height: 1.12;
+
+        margin-bottom: 22px;
+    }
+
+
+    .hero p {
+        font-size: 15px;
+
+        line-height: 1.65;
+
+        margin-bottom: 30px;
+    }
+
+
+    .btn {
+        width: 175px;
+
+        min-width: 175px;
+
+        height: 52px;
+
+        min-height: 52px;
+
+        padding: 0 20px;
+
+        font-size: 15px;
+    }
+
+
+    .btn-quote i {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .nav-logo {
+        width: 43px;
+        height: 43px;
+    }
+
+
+    .last {
+        font-size: 17px;
+    }
+
+
+    .logo-sub {
+        font-size: 7px;
+    }
+
+
+    .nav-toggle-label {
+        width: 35px;
+    }
+
+
+    .hero-container {
+        padding: 35px 17px;
+    }
+
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+
+    .hero p {
+        font-size: 14px;
+    }
+
+
+    .badge {
+        font-size: 12px;
+    }
+
+
+    .btn {
+        width: 165px;
+
+        min-width: 165px;
+    }
+
 }
