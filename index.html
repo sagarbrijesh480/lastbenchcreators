@@ -9,13 +9,55 @@
 
     <link rel="icon" href="download.png" type="image/x-icon">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Nunito & Quicksand -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Quicksand:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        heading: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        brandPink: '#e98da3',
+                        brandPinkHover: '#d7728a',
+                        brandYellow: '#f3c772',
+                        brandBlue: '#9dc2d5',
+                        brandDark: '#333333',
+                        brandText: '#555555',
+                        brandBg: '#fefcf8',
+                    }
+                }
+            }
+        }
+    </script>
+
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col justify-between selection:bg-rose-100 selection:text-pink-600">
 
     <!-- ================= NAVBAR START ================= -->
 
@@ -78,68 +120,348 @@
 
     <!-- ================= NAVBAR END ================= -->
 
+    <main class="hero">
 
-    <!-- ================= HERO SECTION ================= -->
+        <!-- LEFT CONTENT -->
+        <section class="hero-content">
 
-    <section class="hero">
-
-        <!-- Dark Overlay -->
-        <div class="hero-overlay"></div>
-
-
-        <!-- Hero Content -->
-        <div class="hero-container">
-
-            <!-- Badge -->
-            <div class="badge">
-
-                <span class="badge-icon">💝</span>
-
-                Handcrafted with Love
-
+            <div class="tagline">
+                💝 HANDCRAFTED WITH LOVE
             </div>
 
-
-            <!-- Heading -->
             <h1>
-                Gifts That Make <br>
-                Them Feel Special
+                Gifts That Make<br>
+                Them <span>Feel Special</span>
             </h1>
 
-
-            <!-- Description -->
-            <p>
-                From forever roses to personalised photo magazines —
-                every piece is handcrafted to turn your feelings into a
+            <p class="description">
+                From forever roses to personalised photo magazines — <br>
+                every piece is handcrafted to turn your feelings into a <br>
                 memory they'll cherish.
             </p>
 
-
-            <!-- Buttons -->
+            <!-- BUTTONS -->
             <div class="hero-buttons">
-
-                <a href="#" class="btn btn-learn">
+                <a href="#products" class="btn btn-primary">
                     🛍️ Shop Now
                 </a>
 
-
-                <a href="#" class="btn btn-quote">
-
-                    <i class="fa fa-whatsapp"></i>
-
+                <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                    <span class="whatsapp-icon">◉</span>
                     WhatsApp Us
+                </a>
+            </div>
 
+            <!-- FEATURES -->
+            <div class="features">
+                <div class="feature">🌹 Forever Roses</div>
+                <div class="feature">📸 Photo Gifts</div>
+                <div class="feature">🎁 Custom Orders</div>
+                <div class="feature">🚚 Doorstep Delivery</div>
+            </div>
+
+        </section>
+
+        <!-- RIGHT IMAGE -->
+        <section class="hero-image">
+
+            <img src="download.jpg" alt="Beautiful handmade gift wrapped with a red ribbon">
+
+            <!-- FLOATING PRODUCT CARDS -->
+            <div class="product-cards" id="products">
+
+                <a href="#forever-roses" class="product-card">
+                    <span>💐 Forever Roses</span>
+                    <small>From ₹199</small>
+                </a>
+
+                <a href="#photo-gifts" class="product-card">
+                    <span>📖 Photo Gifts</span>
+                    <small>From ₹399</small>
+                </a>
+
+                <a href="#polaroids" class="product-card">
+                    <span>📷 Polaroids</span>
+                    <small>From ₹499</small>
                 </a>
 
             </div>
 
+        </section>
+
+    </main>
+
+    <!-- --------------------- -->
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+
+        <!-- Header Section -->
+        <header class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <span class="w-3 h-3 rounded-full bg-[#e98da3] inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-[#f3c772] inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-[#9dc2d5] inline-block"></span>
+            </div>
+
+            <p class="text-xs sm:text-sm uppercase tracking-widest font-semibold text-gray-400 mb-3 font-heading">
+                ~ SEASONAL PICKS ~
+            </p>
+
+            <h1
+                class="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-[#333333] tracking-tight mb-4 leading-tight">
+                Discover Toys that Fit Perfectly
+            </h1>
+
+            <p class="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto leading-relaxed">
+                From sun-soaked afternoons to cozy indoor days — find toys made for every season and moment.
+            </p>
+        </header>
+
+        <!-- 3 Cards Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16 md:mb-20">
+
+            <!-- Card 1 -->
+            <article class="card-container h-[380px] sm:h-[420px] md:h-[400px] lg:h-[430px] group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=80"
+                    alt="Wooden plush bear and pastel baby toys set" class="card-image" loading="lazy"
+                    onerror="this.src='https://placehold.co/600x800/f8d7da/333333?text=Pastel+Toys';" />
+                <div class="card-overlay">
+                    <div class="overlay-content text-white">
+                        <span
+                            class="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm mb-3 inline-block">
+                            Sensory & Toddler
+                        </span>
+                        <h2 class="text-2xl font-bold font-heading mb-2">Pastel Wooden Sets</h2>
+                        <p class="text-sm text-gray-100 mb-6 font-normal line-clamp-2">
+                            Organic wooden toys designed for delicate hands and endless imaginative play.
+                        </p>
+                        <button
+                            class="bg-[#e98da3] hover:bg-[#d7728a] text-white font-bold py-2.5 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto text-sm">
+                            Shop Now <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card-container h-[380px] sm:h-[420px] md:h-[400px] lg:h-[430px] group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80"
+                    alt="Cute baby playing with wooden stacking toy" class="card-image" loading="lazy"
+                    onerror="this.src='https://placehold.co/600x800/fff3cd/333333?text=Baby+Playing';" />
+                <div class="card-overlay">
+                    <div class="overlay-content text-white">
+                        <span
+                            class="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm mb-3 inline-block">
+                            Early Learning
+                        </span>
+                        <h2 class="text-2xl font-bold font-heading mb-2">Montessori Stacking</h2>
+                        <p class="text-sm text-gray-100 mb-6 font-normal line-clamp-2">
+                            Develop motor skills and hand-eye coordination with safe, toxic-free stackers.
+                        </p>
+                        <button
+                            class="bg-[#e98da3] hover:bg-[#d7728a] text-white font-bold py-2.5 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto text-sm">
+                            Shop Now <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card-container h-[380px] sm:h-[420px] md:h-[400px] lg:h-[430px] group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=800&q=80"
+                    alt="Cozy nursery room with giraffe plush toy and armchair" class="card-image" loading="lazy"
+                    onerror="this.src='https://placehold.co/600x800/d1ecf1/333333?text=Nursery+Decor';" />
+                <div class="card-overlay">
+                    <div class="overlay-content text-white">
+                        <span
+                            class="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm mb-3 inline-block">
+                            Nursery & Decor
+                        </span>
+                        <h2 class="text-2xl font-bold font-heading mb-2">Giant Plush & Decor</h2>
+                        <p class="text-sm text-gray-100 mb-6 font-normal line-clamp-2">
+                            Turn room corners into magical snuggle spots with charming plush companions.
+                        </p>
+                        <button
+                            class="bg-[#e98da3] hover:bg-[#d7728a] text-white font-bold py-2.5 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto text-sm">
+                            Shop Now <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Bottom Info Banner Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-6 border-t border-amber-100/60">
+
+            <!-- Left Info Block -->
+            <div class="lg:col-span-7 space-y-3">
+                <h2 class="text-2xl sm:text-3xl font-bold font-heading text-[#333333] tracking-tight">
+                    Ready to Bring Joy Home?
+                </h2>
+                <p class="text-gray-500 leading-relaxed text-sm sm:text-base font-normal max-w-xl">
+                    Explore our <em class="italic text-gray-700 font-medium">magical world</em> of toys and find the
+                    perfect companion for every little dreamer. From <em class="italic text-gray-700 font-medium">cuddly
+                        friends</em> to brain-boosting games.
+                </p>
+            </div>
+
+            <!-- Right Promo Code Block -->
+            <div class="lg:col-span-5 bg-amber-50/50 p-6 rounded-2xl border border-amber-100/80 space-y-3">
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                    Use promo code <span
+                        class="font-bold text-amber-600 bg-amber-100/80 px-2 py-0.5 rounded font-mono">PLAY10</span> at
+                    checkout to get <strong class="text-[#e98da3] font-bold">10% off</strong> your first order.
+                </p>
+                <p class="text-xs sm:text-sm text-gray-500 italic font-medium">
+                    Hurry — offer valid until the end of the month!
+                </p>
+                <div class="pt-1">
+                    <a href="#shop"
+                        class="inline-block text-[#e98da3] font-bold underline underline-offset-4 decoration-2 hover:text-[#d7728a] transition-colors text-base group">
+                        Shop Now <i
+                            class="fa-solid fa-chevron-right text-xs ml-1 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ------------------ -->
+
+    <!-- Header Section -->
+    <header class="text-center pt-10 pb-8 px-4 max-w-4xl mx-auto">
+        <!-- Three Indicator Dots -->
+        <div class="flex justify-center items-center gap-2 mb-4">
+            <span class="w-3 h-3 rounded-full bg-[#f87171]"></span>
+            <span class="w-3 h-3 rounded-full bg-[#4ade80]"></span>
+            <span class="w-3 h-3 rounded-full bg-[#60a5fa]"></span>
         </div>
+        
+        <!-- Subtitle -->
+        <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-2">&mdash; OUR CATALOG &mdash;</p>
+        
+        <!-- Main Title -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 tracking-tight">
+            All The Fun, All in One Place
+        </h1>
+        
+        <!-- Description -->
+        <p class="text-gray-600 text-sm sm:text-base max-w-xl mx-auto font-normal">
+            Dive into our full collection of toys &mdash; sorted by age, type, and theme.
+        </p>
+    </header>
 
-    </section>
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            
+            <!-- Sidebar / Filters -->
+            <aside class="w-full lg:w-60 flex-shrink-0">
+                <h2 class="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-transparent lg:border-none">Filters</h2>
+                
+                <!-- Category Accordion -->
+                <div class="mb-6">
+                    <button id="category-toggle" class="w-full flex justify-between items-center text-left py-2 group focus:outline-none">
+                        <span class="font-medium text-gray-800 group-hover:text-black">Category</span>
+                        <svg id="category-arrow" class="w-4 h-4 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div id="category-content" class="mt-2 space-y-2.5 transition-all duration-300">
+                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
+                            <input type="radio" name="category" value="All" checked class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
+                            <span>All</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
+                            <input type="radio" name="category" value="Creative Corners" class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
+                            <span>Creative Corners</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
+                            <input type="radio" name="category" value="Fun in Motion" class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
+                            <span>Fun in Motion</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
+                            <input type="radio" name="category" value="Learn & Play" class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
+                            <span>Learn & Play</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
+                            <input type="radio" name="category" value="Snuggles & Friends" class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
+                            <span>Snuggles & Friends</span>
+                        </label>
+                    </div>
+                </div>
 
+                <hr class="border-gray-200 my-4">
+
+                <!-- Price Accordion & Slider -->
+                <div class="mb-6">
+                    <button id="price-toggle" class="w-full flex justify-between items-center text-left py-2 group focus:outline-none">
+                        <span class="font-medium text-gray-800 group-hover:text-black">Price</span>
+                        <svg id="price-arrow" class="w-4 h-4 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div id="price-content" class="mt-4">
+                        <!-- Custom Range Slider -->
+                        <div class="range-slider-container mb-4">
+                            <div class="slider-track"></div>
+                            <div id="slider-range" class="slider-range"></div>
+                            <input type="range" id="range-min" min="10" max="40" value="14" step="1" class="range-input">
+                            <input type="range" id="range-max" min="10" max="40" value="35" step="1" class="range-input">
+                        </div>
+
+                        <!-- Price Badges -->
+                        <div class="flex justify-between items-center gap-3">
+                            <div class="bg-gray-200/70 text-gray-700 text-xs py-1.5 px-4 rounded-full w-20 text-center font-medium">
+                                <span id="min-price-display">14.00</span>
+                            </div>
+                            <div class="bg-gray-200/70 text-gray-700 text-xs py-1.5 px-4 rounded-full w-20 text-center font-medium">
+                                <span id="max-price-display">35.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Product Grid Area -->
+            <div class="flex-1">
+                <!-- Active Filters Top Bar -->
+                <div class="flex flex-wrap items-center gap-3 mb-6 min-h-[32px]">
+                    <div id="active-price-chip" class="inline-flex items-center gap-1.5 border border-gray-300 rounded-full py-1 px-3 text-xs text-gray-700 bg-white">
+                        <span>Price: <span id="chip-min">14,00</span>-<span id="chip-max">35,00</span></span>
+                        <button id="remove-price-chip" class="text-gray-400 hover:text-gray-700 ml-1 font-bold text-sm leading-none focus:outline-none">&times;</button>
+                    </div>
+
+                    <div id="active-category-chip" class="hidden inline-flex items-center gap-1.5 border border-gray-300 rounded-full py-1 px-3 text-xs text-gray-700 bg-white">
+                        <span id="chip-category-text">Category</span>
+                        <button id="remove-category-chip" class="text-gray-400 hover:text-gray-700 ml-1 font-bold text-sm leading-none focus:outline-none">&times;</button>
+                    </div>
+
+                    <button id="clear-all-btn" class="text-xs text-gray-600 hover:text-gray-900 underline font-medium ml-1">Clear all</button>
+                </div>
+
+                <!-- Product Grid -->
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Products dynamically rendered by JavaScript -->
+                </div>
+
+                <!-- Load More Button -->
+                <div class="mt-12 text-center">
+                    <button id="load-more-btn" class="border border-pink-accent text-pink-accent hover:bg-pink-accent-light text-xs font-semibold px-6 py-2.5 rounded-full transition-colors duration-200">
+                        Load More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script src="script.js"></script>
-
+    <script src="script-1.js"></script>
 </body>
 
 </html>
