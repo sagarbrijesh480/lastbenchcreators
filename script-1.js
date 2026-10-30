@@ -245,58 +245,118 @@
                     <rect x="109" y="53" width="52" height="20" rx="2" fill="#fffefb"/>
                     <line x1="115" y1="60" x2="155" y2="60" stroke="#bca88e" stroke-width="2"/>
                 </svg>`
+            },
+            {
+                id: 6,
+                title: "Sensory Clay Trio",
+                category: "Fun in Motion",
+                price: 25.00,
+                originalPrice: 35.00,
+                badge: "Sale",
+                bgColor: "bg-[#f7ebd9]", // Warm Cream Beige
+                // SVG Graphic for Sensory Clay Jars & Wooden Tools
+                svg: `
+                <svg viewBox="0 0 200 200" class="w-full h-full object-contain p-4 drop-shadow-sm">
+                    <!-- Wooden Tools on Left -->
+                    <g transform="rotate(-30 60 140)">
+                        <rect x="30" y="135" width="50" height="8" rx="3" fill="#d9b48f"/>
+                        <polygon points="80,135 92,139 80,143" fill="#c49e78"/>
+                    </g>
+                    <g transform="rotate(-15 70 150)">
+                        <rect x="40" y="150" width="55" height="9" rx="3" fill="#c49e78"/>
+                    </g>
+
+                    <!-- Stack of 3 Clay Jars -->
+                    <!-- Bottom Jar (Pink) -->
+                    <rect x="105" y="115" width="60" height="35" rx="6" fill="#f2c4c4"/>
+                    <rect x="102" y="112" width="66" height="8" rx="3" fill="#e8b0b0"/>
+                    <!-- Label -->
+                    <rect x="109" y="123" width="52" height="20" rx="2" fill="#fffefb"/>
+                    <line x1="115" y1="130" x2="155" y2="130" stroke="#d49b9b" stroke-width="2"/>
+
+                    <!-- Middle Jar (Mint) -->
+                    <rect x="105" y="80" width="60" height="35" rx="6" fill="#c2e2d2"/>
+                    <rect x="102" y="77" width="66" height="8" rx="3" fill="#add4c2"/>
+                    <!-- Label -->
+                    <rect x="109" y="88" width="52" height="20" rx="2" fill="#fffefb"/>
+                    <text x="135" y="98" font-size="5" text-anchor="middle" fill="#588b73" font-weight="bold">SENSORY</text>
+                    <text x="135" y="103" font-size="4" text-anchor="middle" fill="#7ba38f">CLAY TRIO</text>
+
+                    <!-- Top Jar (Beige) -->
+                    <rect x="105" y="45" width="60" height="35" rx="6" fill="#eae0d0"/>
+                    <rect x="102" y="42" width="66" height="8" rx="3" fill="#ded0bc"/>
+                    <!-- Label -->
+                    <rect x="109" y="53" width="52" height="20" rx="2" fill="#fffefb"/>
+                    <line x1="115" y1="60" x2="155" y2="60" stroke="#bca88e" stroke-width="2"/>
+                </svg>`
+            },
+            {
+                id: 6,
+                title: "Sensory Clay Trio",
+                category: "Fun in Motion",
+                price: 25.00,
+                originalPrice: 35.00,
+                badge: "Sale",
+                bgColor: "bg-[#f7ebd9]", // Warm Cream Beige
+                // SVG Graphic for Sensory Clay Jars & Wooden Tools
+                svg: `
+                <svg viewBox="0 0 200 200" class="w-full h-full object-contain p-4 drop-shadow-sm">
+                    <!-- Wooden Tools on Left -->
+                    <g transform="rotate(-30 60 140)">
+                        <rect x="30" y="135" width="50" height="8" rx="3" fill="#d9b48f"/>
+                        <polygon points="80,135 92,139 80,143" fill="#c49e78"/>
+                    </g>
+                    <g transform="rotate(-15 70 150)">
+                        <rect x="40" y="150" width="55" height="9" rx="3" fill="#c49e78"/>
+                    </g>
+
+                    <!-- Stack of 3 Clay Jars -->
+                    <!-- Bottom Jar (Pink) -->
+                    <rect x="105" y="115" width="60" height="35" rx="6" fill="#f2c4c4"/>
+                    <rect x="102" y="112" width="66" height="8" rx="3" fill="#e8b0b0"/>
+                    <!-- Label -->
+                    <rect x="109" y="123" width="52" height="20" rx="2" fill="#fffefb"/>
+                    <line x1="115" y1="130" x2="155" y2="130" stroke="#d49b9b" stroke-width="2"/>
+
+                    <!-- Middle Jar (Mint) -->
+                    <rect x="105" y="80" width="60" height="35" rx="6" fill="#c2e2d2"/>
+                    <rect x="102" y="77" width="66" height="8" rx="3" fill="#add4c2"/>
+                    <!-- Label -->
+                    <rect x="109" y="88" width="52" height="20" rx="2" fill="#fffefb"/>
+                    <text x="135" y="98" font-size="5" text-anchor="middle" fill="#588b73" font-weight="bold">SENSORY</text>
+                    <text x="135" y="103" font-size="4" text-anchor="middle" fill="#7ba38f">CLAY TRIO</text>
+
+                    <!-- Top Jar (Beige) -->
+                    <rect x="105" y="45" width="60" height="35" rx="6" fill="#eae0d0"/>
+                    <rect x="102" y="42" width="66" height="8" rx="3" fill="#ded0bc"/>
+                    <!-- Label -->
+                    <rect x="109" y="53" width="52" height="20" rx="2" fill="#fffefb"/>
+                    <line x1="115" y1="60" x2="155" y2="60" stroke="#bca88e" stroke-width="2"/>
+                </svg>`
             }
         ];
 
-        // State Management
-        let selectedCategory = "All";
-        let minPrice = 14.00;
-        let maxPrice = 35.00;
-
-        // DOM Elements
+        // Product grid
         const productGrid = document.getElementById('product-grid');
-        const categoryRadios = document.querySelectorAll('input[name="category"]');
-        
-        const rangeMin = document.getElementById('range-min');
-        const rangeMax = document.getElementById('range-max');
-        const sliderRange = document.getElementById('slider-range');
-        const minPriceDisplay = document.getElementById('min-price-display');
-        const maxPriceDisplay = document.getElementById('max-price-display');
-        
-        const activePriceChip = document.getElementById('active-price-chip');
-        const activeCategoryChip = document.getElementById('active-category-chip');
-        const chipMin = document.getElementById('chip-min');
-        const chipMax = document.getElementById('chip-max');
-        const chipCategoryText = document.getElementById('chip-category-text');
-        
-        const removePriceChipBtn = document.getElementById('remove-price-chip');
-        const removeCategoryChipBtn = document.getElementById('remove-category-chip');
-        const clearAllBtn = document.getElementById('clear-all-btn');
-
-        // Accordion Controls
-        const categoryToggle = document.getElementById('category-toggle');
-        const categoryContent = document.getElementById('category-content');
-        const categoryArrow = document.getElementById('category-arrow');
-        
-        const priceToggle = document.getElementById('price-toggle');
-        const priceContent = document.getElementById('price-content');
-        const priceArrow = document.getElementById('price-arrow');
 
         // Render Products Function
         function renderProducts() {
             productGrid.innerHTML = '';
 
+            const searchInput = document.getElementById('nav-search-input');
+            const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : '';
+
             const filteredProducts = productsData.filter(product => {
-                const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
-                const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
-                return matchesCategory && matchesPrice;
+                return !searchTerm ||
+                    product.title.toLowerCase().includes(searchTerm) ||
+                    product.category.toLowerCase().includes(searchTerm);
             });
 
             if (filteredProducts.length === 0) {
                 productGrid.innerHTML = `
                     <div class="col-span-full py-12 text-center">
                         <p class="text-gray-500 text-lg">No toys found matching your filter criteria.</p>
-                        <button onclick="resetFilters()" class="mt-4 text-xs font-semibold text-pink-accent underline">Reset Filters</button>
+                        
                     </div>
                 `;
                 return;
@@ -337,108 +397,18 @@
                             `}
                         </div>
 
-                        <!-- Buy Now Button -->
-                        <div class="mt-auto">
-                            <button class="bg-lime-btn hover:bg-lime-btn-hover text-gray-900 font-semibold text-xs py-2.5 px-6 rounded-full transition-all duration-200 active:scale-95 shadow-xs">
-                                Buy now
+                        <!-- Product Actions -->
+                        <div class="product-actions mt-auto">
+                            <button type="button" class="add-cart-btn" data-add-to-cart="${product.id}">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i> Add to cart
                             </button>
+                            <button type="button" class="buy-now-btn" data-buy-now="${product.id}">Buy now</button>
                         </div>
                     </div>
                 `;
                 productGrid.appendChild(card);
             });
         }
-
-        // Dual Slider Logic
-        function updateSlider() {
-            let minVal = parseFloat(rangeMin.value);
-            let maxVal = parseFloat(rangeMax.value);
-
-            if (maxVal - minVal < 2) {
-                if (event && event.target === rangeMin) {
-                    rangeMin.value = maxVal - 2;
-                    minVal = maxVal - 2;
-                } else {
-                    rangeMax.value = minVal + 2;
-                    maxVal = minVal + 2;
-                }
-            }
-
-            minPrice = minVal;
-            maxPrice = maxVal;
-
-            // Slider track visual calculations
-            const minPercent = ((minVal - rangeMin.min) / (rangeMin.max - rangeMin.min)) * 100;
-            const maxPercent = ((maxVal - rangeMin.min) / (rangeMin.max - rangeMin.min)) * 100;
-
-            sliderRange.style.left = minPercent + "%";
-            sliderRange.style.width = (maxPercent - minPercent) + "%";
-
-            // Update displays
-            minPriceDisplay.textContent = minVal.toFixed(2);
-            maxPriceDisplay.textContent = maxVal.toFixed(2);
-
-            chipMin.textContent = minVal.toFixed(2).replace('.', ',');
-            chipMax.textContent = maxVal.toFixed(2).replace('.', ',');
-
-            renderProducts();
-        }
-
-        // Event Listeners for Dual Slider
-        rangeMin.addEventListener('input', updateSlider);
-        rangeMax.addEventListener('input', updateSlider);
-
-        // Category Filter Listener
-        categoryRadios.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                selectedCategory = e.target.value;
-                if (selectedCategory !== "All") {
-                    activeCategoryChip.classList.remove('hidden');
-                    chipCategoryText.textContent = selectedCategory;
-                } else {
-                    activeCategoryChip.classList.add('hidden');
-                }
-                renderProducts();
-            });
-        });
-
-        // Remove Filter Chips Logic
-        removePriceChipBtn.addEventListener('click', () => {
-            rangeMin.value = 10;
-            rangeMax.value = 40;
-            activePriceChip.classList.add('hidden');
-            updateSlider();
-        });
-
-        removeCategoryChipBtn.addEventListener('click', () => {
-            selectedCategory = "All";
-            document.querySelector('input[name="category"][value="All"]').checked = true;
-            activeCategoryChip.classList.add('hidden');
-            renderProducts();
-        });
-
-        function resetFilters() {
-            rangeMin.value = 14;
-            rangeMax.value = 35;
-            selectedCategory = "All";
-            document.querySelector('input[name="category"][value="All"]').checked = true;
-            activePriceChip.classList.remove('hidden');
-            activeCategoryChip.classList.add('hidden');
-            updateSlider();
-        }
-
-        clearAllBtn.addEventListener('click', resetFilters);
-
-        // Accordion Collapsible Logic
-        categoryToggle.addEventListener('click', () => {
-            categoryContent.classList.toggle('hidden');
-            categoryArrow.classList.toggle('rotate-180');
-        });
-
-        priceToggle.addEventListener('click', () => {
-            priceContent.classList.toggle('hidden');
-            priceArrow.classList.toggle('rotate-180');
-        });
 
         // Load More button feedback
         document.getElementById('load-more-btn').addEventListener('click', function() {
@@ -450,8 +420,143 @@
             }, 800);
         });
 
+        // Navbar live product search
+        const navbarSearchInput = document.getElementById('nav-search-input');
+        const navbarSearchButton = document.getElementById('nav-search-button');
+
+        if (navbarSearchInput) {
+            navbarSearchInput.addEventListener('input', () => {
+                renderProducts();
+            });
+
+            navbarSearchInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    document.getElementById('product-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                if (event.key === 'Escape') {
+                    navbarSearchInput.value = '';
+                    renderProducts();
+                    navbarSearchInput.blur();
+                }
+            });
+        }
+
+        if (navbarSearchButton) {
+            navbarSearchButton.addEventListener('click', () => {
+                renderProducts();
+                document.getElementById('product-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                navbarSearchInput?.focus();
+            });
+        }
+
+        // Shopping cart: persists in this browser using localStorage
+        const CART_STORAGE_KEY = 'lastBenchShoppingCart';
+        let shoppingCart = {};
+        try { shoppingCart = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '{}') || {}; }
+        catch (error) { shoppingCart = {}; }
+
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const checkoutButton = document.getElementById('checkout-btn');
+
+        function saveCart() {
+            localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(shoppingCart));
+        }
+        function cartQuantity() {
+            return Object.values(shoppingCart).reduce((sum, item) => sum + item.quantity, 0);
+        }
+        function formatMoney(value) { return '$' + value.toFixed(2) + ' USD'; }
+        function renderCart() {
+            const entries = Object.values(shoppingCart);
+            const quantity = cartQuantity();
+            const subtotal = entries.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            cartCount.textContent = quantity;
+            document.getElementById('cart-item-label').textContent = `(${quantity})`;
+            cartSubtotal.textContent = formatMoney(subtotal);
+            checkoutButton.disabled = quantity === 0;
+
+            if (!entries.length) {
+                cartItemsContainer.innerHTML = `<div class="cart-empty"><i class="fa fa-shopping-bag"></i><h3>Your cart is empty</h3><p>Find something lovely to add!</p></div>`;
+                return;
+            }
+            cartItemsContainer.innerHTML = entries.map(item => `
+                <article class="cart-item">
+                    <div class="cart-item-art ${item.bgColor}">${item.svg}</div>
+                    <div class="cart-item-info">
+                        <h3>${item.title}</h3>
+                        <p>${formatMoney(item.price)}</p>
+                        <div class="cart-quantity">
+                            <button type="button" data-cart-action="decrease" data-id="${item.id}" aria-label="Decrease quantity">−</button>
+                            <span>${item.quantity}</span>
+                            <button type="button" data-cart-action="increase" data-id="${item.id}" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+                    <div class="cart-item-side">
+                        <strong>${formatMoney(item.price * item.quantity)}</strong>
+                        <button type="button" class="remove-cart-item" data-cart-action="remove" data-id="${item.id}">Remove</button>
+                    </div>
+                </article>`).join('');
+        }
+        function openCart() {
+            cartDrawer.classList.add('is-open');
+            cartOverlay.classList.add('is-visible');
+            cartDrawer.setAttribute('aria-hidden', 'false');
+            cartOverlay.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('cart-is-open');
+        }
+        function closeCart() {
+            cartDrawer.classList.remove('is-open');
+            cartOverlay.classList.remove('is-visible');
+            cartDrawer.setAttribute('aria-hidden', 'true');
+            cartOverlay.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('cart-is-open');
+        }
+        function addToCart(productId, shouldOpen = true) {
+            const product = productsData.find(item => item.id === Number(productId));
+            if (!product) return;
+            if (!shoppingCart[product.id]) {
+                shoppingCart[product.id] = { id: product.id, title: product.title, price: product.price, bgColor: product.bgColor, svg: product.svg, quantity: 0 };
+            }
+            shoppingCart[product.id].quantity += 1;
+            saveCart();
+            renderCart();
+            if (shouldOpen) openCart();
+        }
+
+        document.getElementById('open-cart-btn').addEventListener('click', openCart);
+        document.getElementById('close-cart-btn').addEventListener('click', closeCart);
+        document.getElementById('continue-shopping-btn').addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+        document.addEventListener('keydown', event => { if (event.key === 'Escape') closeCart(); });
+
+        productGrid.addEventListener('click', event => {
+            const addButton = event.target.closest('[data-add-to-cart]');
+            const buyButton = event.target.closest('[data-buy-now]');
+            if (addButton) addToCart(addButton.dataset.addToCart);
+            if (buyButton) addToCart(buyButton.dataset.buyNow);
+        });
+        cartItemsContainer.addEventListener('click', event => {
+            const actionButton = event.target.closest('[data-cart-action]');
+            if (!actionButton) return;
+            const id = actionButton.dataset.id;
+            const action = actionButton.dataset.cartAction;
+            if (!shoppingCart[id]) return;
+            if (action === 'increase') shoppingCart[id].quantity += 1;
+            if (action === 'decrease') shoppingCart[id].quantity -= 1;
+            if (action === 'remove' || shoppingCart[id].quantity <= 0) delete shoppingCart[id];
+            saveCart();
+            renderCart();
+        });
+        checkoutButton.addEventListener('click', () => {
+            alert('Your cart is ready! Connect a payment or checkout service to accept orders.');
+        });
+        renderCart();
+
         // Initialize App
         window.onload = function() {
-            updateSlider();
             renderProducts();
         };

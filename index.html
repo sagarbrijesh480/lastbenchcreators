@@ -80,6 +80,27 @@
 
             </div>
 
+            <!-- Center Navbar Search -->
+            <form class="nav-search" id="nav-search-form" role="search" onsubmit="return false;">
+                <input
+                    type="search"
+                    id="nav-search-input"
+                    placeholder="Search gifts, toys, products..."
+                    aria-label="Search products"
+                    autocomplete="off"
+                >
+                <button type="button" id="nav-search-button" aria-label="Search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+                <span class="search-shortcut">⌕</span>
+            </form>
+
+            <!-- Cart Button -->
+            <button type="button" class="nav-cart-btn" id="open-cart-btn" aria-label="Open shopping cart">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <span>Cart</span>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
 
             <!-- Mobile Menu Toggle -->
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -355,110 +376,40 @@
     </header>
 
     <!-- Main Content Container -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
-            
-            <!-- Sidebar / Filters -->
-            <aside class="w-full lg:w-60 flex-shrink-0">
-                <h2 class="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-transparent lg:border-none">Filters</h2>
-                
-                <!-- Category Accordion -->
-                <div class="mb-6">
-                    <button id="category-toggle" class="w-full flex justify-between items-center text-left py-2 group focus:outline-none">
-                        <span class="font-medium text-gray-800 group-hover:text-black">Category</span>
-                        <svg id="category-arrow" class="w-4 h-4 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    
-                    <div id="category-content" class="mt-2 space-y-2.5 transition-all duration-300">
-                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
-                            <input type="radio" name="category" value="All" checked class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
-                            <span>All</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
-                            <input type="radio" name="category" value="Creative Corners" class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
-                            <span>Creative Corners</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
-                            <input type="radio" name="category" value="Fun in Motion" class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
-                            <span>Fun in Motion</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
-                            <input type="radio" name="category" value="Learn & Play" class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
-                            <span>Learn & Play</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900">
-                            <input type="radio" name="category" value="Snuggles & Friends" class="text-pink-accent focus:ring-pink-accent rounded-full text-pink-500">
-                            <span>Snuggles & Friends</span>
-                        </label>
-                    </div>
-                </div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16">
+        <!-- Product Grid: full width (filters removed) -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <!-- Products dynamically rendered by JavaScript -->
+        </div>
 
-                <hr class="border-gray-200 my-4">
-
-                <!-- Price Accordion & Slider -->
-                <div class="mb-6">
-                    <button id="price-toggle" class="w-full flex justify-between items-center text-left py-2 group focus:outline-none">
-                        <span class="font-medium text-gray-800 group-hover:text-black">Price</span>
-                        <svg id="price-arrow" class="w-4 h-4 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    
-                    <div id="price-content" class="mt-4">
-                        <!-- Custom Range Slider -->
-                        <div class="range-slider-container mb-4">
-                            <div class="slider-track"></div>
-                            <div id="slider-range" class="slider-range"></div>
-                            <input type="range" id="range-min" min="10" max="40" value="14" step="1" class="range-input">
-                            <input type="range" id="range-max" min="10" max="40" value="35" step="1" class="range-input">
-                        </div>
-
-                        <!-- Price Badges -->
-                        <div class="flex justify-between items-center gap-3">
-                            <div class="bg-gray-200/70 text-gray-700 text-xs py-1.5 px-4 rounded-full w-20 text-center font-medium">
-                                <span id="min-price-display">14.00</span>
-                            </div>
-                            <div class="bg-gray-200/70 text-gray-700 text-xs py-1.5 px-4 rounded-full w-20 text-center font-medium">
-                                <span id="max-price-display">35.00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Product Grid Area -->
-            <div class="flex-1">
-                <!-- Active Filters Top Bar -->
-                <div class="flex flex-wrap items-center gap-3 mb-6 min-h-[32px]">
-                    <div id="active-price-chip" class="inline-flex items-center gap-1.5 border border-gray-300 rounded-full py-1 px-3 text-xs text-gray-700 bg-white">
-                        <span>Price: <span id="chip-min">14,00</span>-<span id="chip-max">35,00</span></span>
-                        <button id="remove-price-chip" class="text-gray-400 hover:text-gray-700 ml-1 font-bold text-sm leading-none focus:outline-none">&times;</button>
-                    </div>
-
-                    <div id="active-category-chip" class="hidden inline-flex items-center gap-1.5 border border-gray-300 rounded-full py-1 px-3 text-xs text-gray-700 bg-white">
-                        <span id="chip-category-text">Category</span>
-                        <button id="remove-category-chip" class="text-gray-400 hover:text-gray-700 ml-1 font-bold text-sm leading-none focus:outline-none">&times;</button>
-                    </div>
-
-                    <button id="clear-all-btn" class="text-xs text-gray-600 hover:text-gray-900 underline font-medium ml-1">Clear all</button>
-                </div>
-
-                <!-- Product Grid -->
-                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    <!-- Products dynamically rendered by JavaScript -->
-                </div>
-
-                <!-- Load More Button -->
-                <div class="mt-12 text-center">
-                    <button id="load-more-btn" class="border border-pink-accent text-pink-accent hover:bg-pink-accent-light text-xs font-semibold px-6 py-2.5 rounded-full transition-colors duration-200">
-                        Load More
-                    </button>
-                </div>
-            </div>
+        <!-- Load More Button -->
+        <div class="mt-12 text-center">
+            <button id="load-more-btn" class="border border-pink-accent text-pink-accent hover:bg-pink-accent-light text-xs font-semibold px-6 py-2.5 rounded-full transition-colors duration-200">
+                Load More
+            </button>
         </div>
     </main>
+
+    <!-- Shopping Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+        <div class="cart-header">
+            <div>
+                <p class="cart-eyebrow">YOUR PICKS</p>
+                <h2>Your Shopping Cart <span id="cart-item-label">(0)</span></h2>
+            </div>
+            <button class="cart-close" id="close-cart-btn" type="button" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="cart-empty"><i class="fa fa-shopping-bag"></i><h3>Your cart is empty</h3><p>Find something lovely to add!</p></div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal"><span>Subtotal</span><strong id="cart-subtotal">$0.00 USD</strong></div>
+            <p class="cart-note">Shipping and taxes are calculated at checkout.</p>
+            <button class="checkout-btn" id="checkout-btn" type="button" disabled>Continue to checkout <i class="fa fa-arrow-right"></i></button>
+            <button class="continue-shopping" id="continue-shopping-btn" type="button">Continue shopping</button>
+        </div>
+    </aside>
 
     <script src="script.js"></script>
     <script src="script-1.js"></script>
